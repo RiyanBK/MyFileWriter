@@ -5,7 +5,7 @@ import java.nio.charset.StandardCharsets;
 public class MyFileWriter {
     public static void main(String[] args) {
         String data = "Hello, World!";
-        String fileName1 = "example1.txt";
+        String fileName1 = "example.txt";
         String fileName2 = "example2.txt";
         String fileName3 = "example3.txt";
         String fileName4 = "example4.txt";
