@@ -66,4 +66,8 @@ public class MyFileWriter {
         File file = new File(fileName);
         System.out.println (file.length());
     }
+
+    private static void printTotalFileSize (String... fileName) { //String... representats a variable number of inputs/parameters
+        System.out.println ("Total size of all files: ...TBD... bytes");
+    }
 }
