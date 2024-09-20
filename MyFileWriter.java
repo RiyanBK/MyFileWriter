@@ -3,6 +3,18 @@ import java.nio.file.*;
 import java.nio.charset.StandardCharsets;
 
 public class MyFileWriter {
+    private static void printTotalFileSize(String... fileNames) { // String... representats a variable number of
+                                                                  // inputs/parameters
+        long totalSize = 0;
+        for (String fileName : fileNames) {
+            File file = new File(fileName);
+            if (file.exists()) {
+                totalSize += file.length();
+            }
+        }
+        System.out.println("Total size of all files: " + totalSize + " bytes");
+    }
+
     public static void main(String[] args) {
         String secretFile = ".password.txt";
         String secretData = "a password"; //i know, i'm so creative
@@ -60,14 +72,11 @@ public class MyFileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         } */
+       printTotalFileSize("example1.txt", ".password.txt.password.txt", ".secretFolder/data.dat");
     }
 
     private static void printFileSize (String fileName) {
         File file = new File(fileName);
         System.out.println (file.length());
-    }
-
-    private static void printTotalFileSize (String... fileName) { //String... representats a variable number of inputs/parameters
-        System.out.println ("Total size of all files: ...TBD... bytes");
     }
 }
