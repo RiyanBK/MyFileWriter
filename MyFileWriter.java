@@ -37,6 +37,8 @@ public class MyFileWriter {
             e.printStackTrace();
         }
 
+        printTotalFileSize( ".password.txt", ".secretFolder/data.dat");
+
         /*
         // 3. Using FileOutputStream
         try (FileOutputStream outputStream = new FileOutputStream(fileName3)) {
@@ -67,7 +69,14 @@ public class MyFileWriter {
         System.out.println (file.length());
     }
 
-    private static void printTotalFileSize (String... fileName) { //String... representats a variable number of inputs/parameters
-        System.out.println ("Total size of all files: ...TBD... bytes");
+    private static void printTotalFileSize(String... fileNames) {
+        long totalSize = 0;
+        for (String fileName : fileNames) {
+            File file = new File(fileName);
+            if (file.exists()) {
+                totalSize += file.length();
+            }
+        }
+        System.out.println("Total size of all files: " + totalSize + " bytes");
     }
 }
